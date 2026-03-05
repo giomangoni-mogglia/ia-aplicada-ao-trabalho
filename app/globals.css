@@ -1,0 +1,525 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties ─────────────────────────────── */
+:root {
+  --space-indigo: #1a1a2e;
+  --parchment: #f5f2ec;
+  --cerulean: #2d6a8a;
+  --goldenrod: #d4a017;
+  --tomato: #f95738;
+}
+
+/* ── Font Variables ─────────────────────────────────────── */
+:root {
+  --font-space-grotesk: "Space Grotesk";
+  --font-inter: "Inter";
+  --font-playfair: "Playfair Display";
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--space-indigo);
+  color: var(--parchment);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+.font-heading {
+  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+.font-serif {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* ── Aurora Background ──────────────────────────────────── */
+.aurora-bg {
+  background: linear-gradient(
+    -45deg,
+    #1a1a2e,
+    #1a1a2ecc,
+    #2d6a8a18,
+    #1a1a2e,
+    #f9573808,
+    #1a1a2e,
+    #d4a01710
+  );
+  background-size: 400% 400%;
+  animation: aurora 18s ease infinite;
+}
+
+/* ── Noise Texture ──────────────────────────────────────── */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  animation: noise-drift 8s ease-in-out infinite;
+}
+
+/* ── Orbital Ring System ────────────────────────────────── */
+.orbit-container {
+  perspective: 800px;
+  perspective-origin: 50% 50%;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(45, 106, 138, 0.25);
+  transform-style: preserve-3d;
+}
+
+.orbit-ring::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(45, 106, 138, 0.5) 50%,
+      transparent 100%
+    )
+    border-box;
+}
+
+.orbit-ring-1 {
+  width: 320px;
+  height: 320px;
+  top: 50%;
+  left: 50%;
+  margin: -160px 0 0 -160px;
+  animation: orbit-rotate 25s linear infinite;
+}
+.orbit-ring-2 {
+  width: 460px;
+  height: 460px;
+  top: 50%;
+  left: 50%;
+  margin: -230px 0 0 -230px;
+  animation: orbit-rotate 18s linear infinite reverse;
+}
+.orbit-ring-3 {
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  margin: -300px 0 0 -300px;
+  animation: orbit-rotate 32s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.orbit-card {
+  position: absolute;
+  width: 90px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── Gradient Border Animation ──────────────────────────── */
+.gradient-border-anim {
+  position: relative;
+  border-radius: 16px;
+}
+.gradient-border-anim::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    var(--tomato),
+    var(--goldenrod),
+    var(--cerulean),
+    var(--tomato)
+  );
+  background-size: 300% 100%;
+  animation: gradient-border 4s linear infinite;
+  z-index: -1;
+}
+
+/* ── Pulse Ring ─────────────────────────────────────────── */
+.pulse-ring-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.pulse-ring-wrap::before,
+.pulse-ring-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid rgba(249, 87, 56, 0.4);
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.pulse-ring-wrap::after {
+  animation-delay: 1s;
+}
+
+/* ── Shimmer Effect ─────────────────────────────────────── */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 242, 236, 0.7) 0%,
+    rgba(245, 242, 236, 1) 40%,
+    rgba(212, 160, 23, 0.9) 50%,
+    rgba(245, 242, 236, 1) 60%,
+    rgba(245, 242, 236, 0.7) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Floating Particles ─────────────────────────────────── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.particle-1 {
+  width: 3px;
+  height: 3px;
+  background: rgba(212, 160, 23, 0.6);
+  top: 20%;
+  left: 15%;
+  animation: float 7s ease-in-out infinite;
+}
+.particle-2 {
+  width: 2px;
+  height: 2px;
+  background: rgba(45, 106, 138, 0.8);
+  top: 60%;
+  left: 80%;
+  animation: float 5s ease-in-out infinite 1.5s;
+}
+.particle-3 {
+  width: 4px;
+  height: 4px;
+  background: rgba(249, 87, 56, 0.4);
+  top: 40%;
+  left: 10%;
+  animation: float 9s ease-in-out infinite 0.5s;
+}
+.particle-4 {
+  width: 2px;
+  height: 2px;
+  background: rgba(212, 160, 23, 0.5);
+  top: 75%;
+  left: 35%;
+  animation: float 6s ease-in-out infinite 2s;
+}
+.particle-5 {
+  width: 3px;
+  height: 3px;
+  background: rgba(45, 106, 138, 0.6);
+  top: 25%;
+  left: 70%;
+  animation: float 8s ease-in-out infinite 1s;
+}
+.particle-6 {
+  width: 2px;
+  height: 2px;
+  background: rgba(249, 87, 56, 0.5);
+  top: 85%;
+  left: 60%;
+  animation: float 7s ease-in-out infinite 3s;
+}
+
+/* ── Uiverse Animated Button ────────────────────────────── */
+.uiverse-btn {
+  --duration: 7s;
+  --easing: linear;
+  --c-color-1: rgba(212, 160, 23, 0.75);
+  --c-color-2: #2d6a8a;
+  --c-color-3: #ff6b35;
+  --c-color-4: rgba(255, 200, 80, 0.8);
+  --c-shadow: rgba(249, 87, 56, 0.55);
+  --c-shadow-inset-top: rgba(249, 140, 80, 0.9);
+  --c-shadow-inset-bottom: rgba(255, 220, 120, 0.7);
+  --c-radial-inner: #f95738;
+  --c-radial-outer: #d4a017;
+  --c-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  display: inline-table;
+  border-radius: 24px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: var(--c-color);
+  background: radial-gradient(
+    circle,
+    var(--c-radial-inner),
+    var(--c-radial-outer) 80%
+  );
+  box-shadow: 0 0 20px var(--c-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.uiverse-btn:hover {
+  --duration: 1400ms;
+  box-shadow: 0 0 32px var(--c-shadow), 0 8px 24px rgba(249, 87, 56, 0.3);
+}
+
+.uiverse-btn::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  box-shadow:
+    inset 0 3px 12px var(--c-shadow-inset-top),
+    inset 0 -3px 4px var(--c-shadow-inset-bottom);
+}
+
+.uiverse-btn .btn-wrapper {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  overflow: hidden;
+  border-radius: 24px;
+  min-width: 220px;
+  padding: 14px 32px;
+}
+
+.uiverse-btn .btn-wrapper span.btn-text {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-space-grotesk), "Helvetica Neue", Arial, sans-serif;
+}
+
+.uiverse-btn .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  filter: blur(var(--blur, 8px));
+  background: var(--background, transparent);
+  transform: translate(var(--x, 0), var(--y, 0)) translateZ(0);
+  animation: var(--animation, none) var(--duration) var(--easing) infinite;
+}
+
+.uiverse-btn .circle.circle-1,
+.uiverse-btn .circle.circle-9,
+.uiverse-btn .circle.circle-10 {
+  --background: var(--c-color-4);
+}
+.uiverse-btn .circle.circle-3,
+.uiverse-btn .circle.circle-4 {
+  --background: var(--c-color-2);
+  --blur: 14px;
+}
+.uiverse-btn .circle.circle-5,
+.uiverse-btn .circle.circle-6 {
+  --background: var(--c-color-3);
+  --blur: 16px;
+}
+.uiverse-btn .circle.circle-2,
+.uiverse-btn .circle.circle-7,
+.uiverse-btn .circle.circle-8,
+.uiverse-btn .circle.circle-11,
+.uiverse-btn .circle.circle-12 {
+  --background: var(--c-color-1);
+  --blur: 12px;
+}
+
+.uiverse-btn .circle.circle-1  { --x: 0; --y: -40px; --animation: ub-circle-1; }
+.uiverse-btn .circle.circle-2  { --x: 92px; --y: 8px; --animation: ub-circle-2; }
+.uiverse-btn .circle.circle-3  { --x: -12px; --y: -12px; --animation: ub-circle-3; }
+.uiverse-btn .circle.circle-4  { --x: 80px; --y: -12px; --animation: ub-circle-4; }
+.uiverse-btn .circle.circle-5  { --x: 12px; --y: -4px; --animation: ub-circle-5; }
+.uiverse-btn .circle.circle-6  { --x: 56px; --y: 16px; --animation: ub-circle-6; }
+.uiverse-btn .circle.circle-7  { --x: 8px; --y: 28px; --animation: ub-circle-7; }
+.uiverse-btn .circle.circle-8  { --x: 28px; --y: -4px; --animation: ub-circle-8; }
+.uiverse-btn .circle.circle-9  { --x: 20px; --y: -12px; --animation: ub-circle-9; }
+.uiverse-btn .circle.circle-10 { --x: 64px; --y: 16px; --animation: ub-circle-10; }
+.uiverse-btn .circle.circle-11 { --x: 4px; --y: 4px; --animation: ub-circle-11; }
+.uiverse-btn .circle.circle-12 { --blur: 14px; --x: 52px; --y: 4px; --animation: ub-circle-12; }
+
+@keyframes ub-circle-1 {
+  33% { transform: translate(0px, 16px) translateZ(0); }
+  66% { transform: translate(12px, 64px) translateZ(0); }
+}
+@keyframes ub-circle-2 {
+  33% { transform: translate(80px, -10px) translateZ(0); }
+  66% { transform: translate(72px, -48px) translateZ(0); }
+}
+@keyframes ub-circle-3 {
+  33% { transform: translate(20px, 12px) translateZ(0); }
+  66% { transform: translate(12px, 4px) translateZ(0); }
+}
+@keyframes ub-circle-4 {
+  33% { transform: translate(76px, -12px) translateZ(0); }
+  66% { transform: translate(112px, -8px) translateZ(0); }
+}
+@keyframes ub-circle-5 {
+  33% { transform: translate(84px, 28px) translateZ(0); }
+  66% { transform: translate(40px, -32px) translateZ(0); }
+}
+@keyframes ub-circle-6 {
+  33% { transform: translate(28px, -16px) translateZ(0); }
+  66% { transform: translate(76px, -56px) translateZ(0); }
+}
+@keyframes ub-circle-7 {
+  33% { transform: translate(8px, 28px) translateZ(0); }
+  66% { transform: translate(20px, -60px) translateZ(0); }
+}
+@keyframes ub-circle-8 {
+  33% { transform: translate(32px, -4px) translateZ(0); }
+  66% { transform: translate(56px, -20px) translateZ(0); }
+}
+@keyframes ub-circle-9 {
+  33% { transform: translate(20px, -12px) translateZ(0); }
+  66% { transform: translate(80px, -8px) translateZ(0); }
+}
+@keyframes ub-circle-10 {
+  33% { transform: translate(68px, 20px) translateZ(0); }
+  66% { transform: translate(100px, 28px) translateZ(0); }
+}
+@keyframes ub-circle-11 {
+  33% { transform: translate(4px, 4px) translateZ(0); }
+  66% { transform: translate(68px, 20px) translateZ(0); }
+}
+@keyframes ub-circle-12 {
+  33% { transform: translate(56px, 0px) translateZ(0); }
+  66% { transform: translate(60px, -32px) translateZ(0); }
+}
+
+/* ── Tilt Card ──────────────────────────────────────────── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tilt-card:hover {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* ── Radial Reveal Card ─────────────────────────────────── */
+.radial-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.radial-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(45, 106, 138, 0.12) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.radial-reveal:hover::after {
+  opacity: 1;
+}
+
+/* ── Section Transition Gradient ────────────────────────── */
+.section-fade-dark {
+  background: linear-gradient(to bottom, var(--space-indigo), #0d0d1a);
+}
+.section-fade-light {
+  background: linear-gradient(to bottom, var(--parchment), #ede9e0);
+}
+
+/* ── Underline Draw ─────────────────────────────────────── */
+.underline-draw {
+  position: relative;
+}
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--tomato);
+  transition: width 0.4s ease;
+}
+.underline-draw:hover::after {
+  width: 100%;
+}
+
+/* ── Accordion ──────────────────────────────────────────── */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+}
+
+/* ── Glass Card ─────────────────────────────────────────── */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--space-indigo);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cerulean);
+  border-radius: 3px;
+}
+
+/* ── Selection ──────────────────────────────────────────── */
+::selection {
+  background: rgba(249, 87, 56, 0.3);
+  color: #fff;
+}
