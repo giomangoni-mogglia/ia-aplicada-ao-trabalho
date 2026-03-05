@@ -14,7 +14,7 @@ export default function Hero() {
           alt=""
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay gradient — darkens top & bottom, lets center breathe */}
+        {/* Dark overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/70 via-[#0A0A0A]/30 to-[#0A0A0A]/80" />
         {/* Extra top vignette for navbar readability */}
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0A0A0A]/60 to-transparent" />
@@ -33,7 +33,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-parchment/70 border border-parchment/20 rounded-full px-5 py-2"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-goldenrod animate-pulse" />
-            Para profissionais que querem usar IA no trabalho
+            IA Aplicada ao Trabalho
           </span>
         </motion.div>
 
@@ -44,10 +44,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="text-parchment font-bold text-[clamp(2.6rem,7vw,5.5rem)] leading-[1.02] tracking-tight max-w-4xl text-balance"
         >
-          A IA não precisa ser{" "}
-          <em className="not-italic text-parchment/60">ameaça.</em>{" "}
-          Pode ser seu{" "}
-          <em className="italic font-light">superpoder.</em>
+          A maioria dos cursos de IA te ensinam a construir o carro.{" "}
+          <em className="italic font-light text-parchment/70">Esse te ensina a dirigir.</em>
         </motion.h1>
 
         {/* Subheadline */}
@@ -57,9 +55,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mt-7 text-[clamp(0.95rem,1.8vw,1.15rem)] text-parchment/55 leading-relaxed max-w-2xl font-light"
         >
-          Em <span className="text-parchment font-medium">2 horas</span>,
-          identifique quais tarefas do seu trabalho podem ser
-          otimizadas com IA, qual ferramenta usar — e como fazer isso{" "}
+          Saiba exatamente onde aplicar IA no seu trabalho, qual ferramenta
+          escolher e como começar{" "}
           <span className="text-parchment font-medium">ainda essa semana</span>.
         </motion.p>
 
@@ -72,7 +69,7 @@ export default function Hero() {
         >
           <div className="pulse-ring-wrap rounded-3xl">
             <AnimatedButton href={CHECKOUT_URL} size="lg">
-              Quero aplicar IA no trabalho
+              {"Quero aplicar IA no meu trabalho agora \u2192"}
             </AnimatedButton>
           </div>
         </motion.div>
@@ -97,8 +94,8 @@ export default function Hero() {
       >
         <div className="max-w-5xl mx-auto px-5 py-5 flex flex-wrap items-center justify-center gap-8 md:gap-14">
           {[
-            { value: "250+", label: "consultorias realizadas" },
-            { value: "50k+", label: "seguidores" },
+            { value: "250+", label: "profissionais e empresas atendidos" },
+            { value: "50k+", label: "seguidores no LinkedIn" },
             { value: "Top Voice", label: "LinkedIn em IA" },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-2.5">

@@ -4,10 +4,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "250+", label: "profissionais atendidos" },
+  { value: "250+", label: "profissionais e empresas" },
   { value: "50k+", label: "seguidores" },
-  { value: "3", label: "grandes palestras" },
+  { value: "Top Voice", label: "LinkedIn em IA" },
 ];
+
+const logos = ["Adpata", "Red Bull", "UNIMED", "FUCAPE", "Tera", "FGV"];
 
 export default function Instructor() {
   const ref = useRef<HTMLDivElement>(null);
@@ -33,10 +35,9 @@ export default function Instructor() {
           >
             {/* Photo frame */}
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-w-sm mx-auto md:mx-0">
-              {/* Placeholder visual — replace with actual photo */}
+              {/* Placeholder visual */}
               <div className="absolute inset-0 bg-gradient-to-br from-cerulean/30 to-space-indigo aurora-bg" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-center px-8">
-                {/* Abstract person icon */}
                 <svg viewBox="0 0 80 100" className="w-32 h-40 opacity-25 text-parchment" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="40" cy="22" r="16" />
                   <path d="M10 80 Q10 55 40 55 Q70 55 70 80 L70 100 L10 100 Z" />
@@ -45,7 +46,7 @@ export default function Instructor() {
                   <div className="h-2 w-32 bg-white/20 rounded" />
                   <div className="h-1.5 w-20 bg-white/10 rounded mx-auto" />
                 </div>
-                <p className="text-parchment/40 text-xs font-sans">
+                <p className="text-parchment/40 text-xs">
                   Substitua com sua foto
                 </p>
               </div>
@@ -67,8 +68,8 @@ export default function Instructor() {
                   Top Voice
                 </span>
               </div>
-              <p className="text-parchment text-xs font-sans leading-tight">
-                LinkedIn em IA · 2024
+              <p className="text-parchment text-xs leading-tight">
+                LinkedIn em IA · Top 10 vozes de IA do Brasil
               </p>
             </motion.div>
           </motion.div>
@@ -79,7 +80,7 @@ export default function Instructor() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-4">
+            <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-4">
               Quem ensina
             </p>
 
@@ -90,31 +91,32 @@ export default function Instructor() {
               Gio Mangoni
             </h2>
 
-            <p className="font-sans text-parchment/70 text-base md:text-lg leading-relaxed mb-8">
-              Educadora de IA aplicada ao trabalho. 250+ profissionais e
-              empresas atendidos. Top Voice LinkedIn. Palestras na{" "}
-              <span className="text-parchment font-medium">Red Bull</span>,{" "}
-              <span className="text-parchment font-medium">UNIMED</span> e{" "}
-              <span className="text-parchment font-medium">FGV</span>.
-            </p>
-
-            {/* Pull quote */}
-            <motion.blockquote
-              initial={{ opacity: 0, y: 12 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative pl-6 mb-10"
-            >
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-tomato via-goldenrod to-transparent" />
-              <p className="italic text-parchment text-xl md:text-2xl leading-snug font-light">
-                &ldquo;Eu não ensino IA como hype.
-                <br />
-                <span className="text-goldenrod not-italic font-bold">
-                  Ensino como ferramenta de trabalho.
-                </span>
-                &rdquo;
+            <div className="space-y-4 text-parchment/70 text-base md:text-lg leading-relaxed mb-8">
+              <p>
+                Gio é referência nacional em IA aplicada. Aos 23 anos, já ajudou mais de{" "}
+                <span className="text-parchment font-medium">250 profissionais e empresas</span>{" "}
+                a aplicar IA no trabalho — de times de vendas a áreas de RH, de startups a multinacionais.
               </p>
-            </motion.blockquote>
+              <p>
+                Já atuou em três startups do setor de IA. No LinkedIn, construiu uma audiência de{" "}
+                <span className="text-parchment font-medium">50 mil seguidores</span>{" "}
+                e é reconhecida como{" "}
+                <span className="text-goldenrod font-medium">LinkedIn Top Voice</span>,
+                eleita entre as 10 vozes de IA mais relevantes do Brasil e uma das criadoras de conteúdo de IA mais confiáveis do país.
+              </p>
+            </div>
+
+            {/* Brand logos */}
+            <div className="flex flex-wrap items-center gap-3 mb-10">
+              {logos.map((logo) => (
+                <span
+                  key={logo}
+                  className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold text-parchment/50 border border-parchment/10 bg-white/3"
+                >
+                  {logo}
+                </span>
+              ))}
+            </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
@@ -132,7 +134,7 @@ export default function Instructor() {
                   >
                     {s.value}
                   </p>
-                  <p className="text-parchment/45 text-xs font-sans mt-1 leading-tight">
+                  <p className="text-parchment/45 text-xs mt-1 leading-tight">
                     {s.label}
                   </p>
                 </motion.div>

@@ -2,10 +2,11 @@ import AnnouncementBar from "./components/AnnouncementBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import VSL from "./components/VSL";
+import ForWho from "./components/ForWho";
+import WhatYouLearn from "./components/WhatYouLearn";
 import BeforeAfter from "./components/BeforeAfter";
 import Testimonials from "./components/Testimonials";
 import Instructor from "./components/Instructor";
-import ForWho from "./components/ForWho";
 import Offer from "./components/Offer";
 import Guarantee from "./components/Guarantee";
 import FAQ from "./components/FAQ";
@@ -14,7 +15,7 @@ import CTAFinal from "./components/CTAFinal";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0A0A0A]">
-      {/* Manu section — Announcement bar */}
+      {/* Announcement bar */}
       <AnnouncementBar />
 
       {/* Sticky navbar */}
@@ -26,6 +27,12 @@ export default function Home() {
       {/* VSL */}
       <VSL />
 
+      {/* For who */}
+      <ForWho />
+
+      {/* What you'll learn */}
+      <WhatYouLearn />
+
       {/* Before / After */}
       <BeforeAfter />
 
@@ -34,9 +41,6 @@ export default function Home() {
 
       {/* Instructor */}
       <Instructor />
-
-      {/* For who */}
-      <ForWho />
 
       {/* Offer */}
       <Offer />

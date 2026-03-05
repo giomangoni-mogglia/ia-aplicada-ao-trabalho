@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 const testimonials = [
   {
     quote:
-      "Consegui economizar 2 horas por semana só automatizando organização de agenda e follow-ups.",
+      "Consegui economizar 2 horas por semana só automatizando organização de agenda e follow-ups. Agora tenho espaço mental para focar no estratégico.",
     name: "Eduardo",
     role: "Analista de Produto",
     highlight: "2h/semana economizadas",
@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     quote:
-      "Finalmente entendi quando usar ChatGPT vs Claude vs Gemini. Antes testava no escuro.",
+      "Finalmente entendi quando usar ChatGPT vs Claude vs Gemini. Antes eu testava no escuro, agora sei qual ferramenta usar para cada tarefa.",
     name: "Marina",
     role: "Analista de Marketing",
     highlight: "Clareza total nas ferramentas",
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      "Estruturei a adoção de IA no meu time de 8 pessoas. Economizamos 24 horas por semana.",
+      "Estruturei adoção de IA no meu time de 8 pessoas. Economizamos 24 horas por semana no total. Foi o case de carreira que eu precisava.",
     name: "Ricardo",
     role: "Gerente de Vendas",
     highlight: "24h/semana no time",
@@ -167,8 +167,8 @@ export default function Testimonials() {
             className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
-            Quem aplicou,{" "}
-            <span className="text-goldenrod">sentiu essa semana</span>
+            Junte-se aos profissionais que já foram{" "}
+            <span className="text-goldenrod">transformados</span>
           </h2>
         </motion.div>
 

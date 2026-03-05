@@ -5,42 +5,32 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Quanto tempo vou precisar para fazer o curso?",
-    a: "O curso tem ~2 horas de conteúdo estruturado. Você pode fazer de uma vez ou dividir em blocos de 30 min. A maioria das pessoas termina em um fim de semana.",
-  },
-  {
     q: "Preciso saber programar?",
-    a: "Não. Este curso é para profissionais não-técnicos. Zero código, zero configuração técnica. Tudo o que você precisa é acesso a uma ferramenta de IA — que você provavelmente já tem.",
+    a: "Não. O curso é para profissionais não-técnicos. Você vai usar ferramentas prontas — sem código, sem configuração.",
   },
   {
-    q: "Já uso ChatGPT no trabalho. Esse curso ainda é para mim?",
-    a: "Sim — especialmente para você. O curso resolve exatamente a situação de quem já usa mas sente que poderia extrair muito mais. Você vai sair com um framework, não só com dicas soltas.",
+    q: "Quanto tempo dura o curso?",
+    a: "Aproximadamente 2,5 horas divididas em aulas curtas. Você assiste no seu ritmo, quando quiser.",
   },
   {
-    q: "Qual a diferença entre ChatGPT, Claude e Gemini? O curso ensina isso?",
-    a: "Sim. Um dos módulos é dedicado a entender quando usar cada ferramenta para cada tipo de tarefa. Você não vai mais testar no escuro.",
+    q: "Funciona para a minha área?",
+    a: "Se você trabalha com marketing, vendas, RH, produto, operações, finanças, jurídico, atendimento ou gestão, sim. O curso traz casos de uso aplicáveis em diferentes contextos de trabalho.",
   },
   {
-    q: "O acesso expira?",
-    a: "Não. Você tem acesso vitalício ao material. E todas as atualizações futuras do curso são inclusas sem custo adicional.",
+    q: "Quais ferramentas vamos usar?",
+    a: "Claude, ChatGPT, Gemini, NotebookLM, Manus e outras. Cada ferramenta é mostrada no contexto em que faz mais sentido utilizar.",
   },
   {
-    q: "Como funciona a garantia?",
-    a: "Você tem 7 dias a partir da compra. Se não aplicar nada, manda um e-mail e eu devolvo 100% do valor — sem perguntas, sem burocracia.",
-  },
-  {
-    q: "Tem certificado?",
-    a: "Sim. Ao concluir, você recebe um certificado de conclusão que pode adicionar ao seu LinkedIn ou currículo.",
+    q: "Preciso pagar uma IA para aproveitar o curso?",
+    a: "Não. Você consegue aplicar tudo com os planos gratuitos disponíveis. O curso também te ajuda a decidir qual ferramenta de IA vale mais a pena para seu trabalho.",
   },
 ];
 
 function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
   const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
@@ -128,8 +118,8 @@ export default function FAQ() {
             className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
-            Perguntas &{" "}
-            <span className="italic text-goldenrod font-light">respostas</span>
+            Perguntas{" "}
+            <span className="italic text-goldenrod font-light">frequentes</span>
           </h2>
         </motion.div>
 
@@ -140,7 +130,7 @@ export default function FAQ() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0a0a18] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#0A0A0A] pointer-events-none" />
     </section>
   );
 }

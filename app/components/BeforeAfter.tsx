@@ -5,16 +5,24 @@ import { motion, useInView } from "framer-motion";
 
 const rows = [
   {
-    before: "Assina várias ferramentas mas não sabe qual usar para cada tarefa",
-    after: "Escolhe a ferramenta certa para cada situação",
+    before: "Comete erros que fazem perder mais tempo do que se tivesse feito manualmente",
+    after: "Evita os erros que fazem as pessoas perderem tempo com IA",
   },
   {
-    before: "Passa mais tempo tentando fazer a IA funcionar do que fazendo a tarefa",
-    after: "Prompts que entregam o resultado na primeira tentativa",
+    before: "Assina ferramentas de IA mas não sabe qual usar para cada coisa",
+    after: "Escolhe a ferramenta certa para cada tipo de tarefa",
   },
   {
-    before: "Não sabe por onde começar",
-    after: "Plano de ação mapeado para o seu trabalho",
+    before: "Não sabe quais tarefas da rotina pode automatizar com IA",
+    after: "Identifica quais tarefas da sua rotina podem ser automatizadas com IA ainda essa semana",
+  },
+  {
+    before: "Perde tempo com retrabalho e refação",
+    after: "Cria prompts que entregam resultados precisos",
+  },
+  {
+    before: "Não sabe como aplicar no trabalho ou como avançar seu uso",
+    after: "Mapeia seu próprio trabalho e prioriza por onde começar a aplicar IA",
   },
 ];
 
@@ -83,14 +91,14 @@ export default function BeforeAfter() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3">
             Transformação
           </p>
           <h2
             className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
-            Antes e depois do curso
+            O que muda depois do curso
           </h2>
         </motion.div>
 
@@ -147,7 +155,7 @@ export default function BeforeAfter() {
                         <path d="M2 2l8 8M10 2L2 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </span>
-                    <p className="text-parchment/60 font-sans text-sm md:text-base leading-relaxed">
+                    <p className="text-parchment/60 text-sm md:text-base leading-relaxed">
                       {row.before}
                     </p>
                   </div>
@@ -163,7 +171,7 @@ export default function BeforeAfter() {
                         <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <p className="text-parchment font-sans text-sm md:text-base leading-relaxed font-medium">
+                    <p className="text-parchment text-sm md:text-base leading-relaxed font-medium">
                       {row.after}
                     </p>
                   </div>
@@ -172,24 +180,6 @@ export default function BeforeAfter() {
             </div>
           ))}
         </div>
-
-        {/* Bottom note */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
-        >
-          <p className="italic text-parchment/60 font-light text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            &ldquo;Você não vai virar especialista em IA em 2 horas. Mas vai saber usar
-            IA para trabalhar melhor —{" "}
-            <span className="text-goldenrod not-italic font-semibold">
-              e vai sentir isso ainda essa semana.
-            </span>
-            &rdquo;
-          </p>
-        </motion.div>
       </div>
     </section>
   );

@@ -64,7 +64,7 @@ export default function Guarantee() {
               }}
             >
               <span className="text-cerulean text-xs font-bold uppercase tracking-widest">
-                Garantia incondicional
+                Garantia de 7 dias
               </span>
             </div>
 
@@ -76,7 +76,7 @@ export default function Guarantee() {
               <span className="text-tomato">Sem perguntas.</span>
             </h2>
 
-            <p className="font-sans text-space-indigo/60 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+            <p className="text-space-indigo/60 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Se você assistir ao curso, tentar aplicar e não conseguir fazer
               nada diferente no seu trabalho em 7 dias, eu devolvo{" "}
               <span className="font-semibold text-space-indigo">100% do valor</span> — sem burocracia, sem
@@ -87,13 +87,13 @@ export default function Guarantee() {
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-6 mt-4">
             {[
-              { icon: "🔒", label: "Pagamento seguro" },
-              { icon: "⚡", label: "Acesso imediato" },
-              { icon: "🏅", label: "Certificado incluso" },
+              { label: "Pagamento seguro" },
+              { label: "Acesso imediato" },
+              { label: "Certificado incluso" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-2">
-                <span className="text-lg">{item.icon}</span>
-                <span className="text-space-indigo/50 text-sm font-sans">
+                <span className="w-1.5 h-1.5 rounded-full bg-cerulean/40" />
+                <span className="text-space-indigo/50 text-sm">
                   {item.label}
                 </span>
               </div>

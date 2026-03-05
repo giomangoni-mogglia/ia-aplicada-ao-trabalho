@@ -12,7 +12,7 @@ export default function CTAFinal() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#0a0a18] py-24 md:py-40 overflow-hidden"
+      className="relative bg-[#0A0A0A] py-24 md:py-40 overflow-hidden"
     >
       {/* Aurora background */}
       <div className="absolute inset-0 aurora-bg opacity-60" />
@@ -30,23 +30,18 @@ export default function CTAFinal() {
         }}
       />
 
-      {/* Particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[1, 2, 3, 4, 5, 6].map((n) => (
-          <div key={n} className={`particle particle-${n}`} />
-        ))}
-      </div>
-
       <div className="relative z-10 max-w-4xl mx-auto px-5 text-center">
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
+        {/* Main headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-8"
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="font-bold text-[clamp(1.6rem,4vw,2.8rem)] text-parchment mb-6 max-w-3xl mx-auto leading-snug"
+          style={{ letterSpacing: "-0.03em" }}
         >
-          A escolha é sua
-        </motion.p>
+          A diferença entre quem usa IA de forma básica e quem domina aplicação no trabalho é{" "}
+          <span className="italic text-goldenrod font-light">metodologia.</span>
+        </motion.h2>
 
         {/* Two paths */}
         <div className="grid md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
@@ -54,7 +49,7 @@ export default function CTAFinal() {
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="rounded-2xl p-5 text-left"
             style={{
               background: "rgba(249,87,56,0.04)",
@@ -63,10 +58,10 @@ export default function CTAFinal() {
           >
             <div className="w-7 h-7 rounded-full bg-tomato/10 border border-tomato/25 flex items-center justify-center mb-3">
               <svg className="w-3 h-3 text-tomato" fill="none" viewBox="0 0 12 12">
-                <path d="M6 1v6M6 9.5v1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M6 1v6M6 9.5v.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <p className="font-sans text-parchment/50 text-sm leading-relaxed">
+            <p className="text-parchment/50 text-sm leading-relaxed">
               Você pode continuar testando sozinho nos próximos{" "}
               <span className="text-parchment/70 font-medium">6 meses</span>{" "}
               e talvez chegar lá.
@@ -77,7 +72,7 @@ export default function CTAFinal() {
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
             className="rounded-2xl p-5 text-left"
             style={{
               background: "rgba(212,160,23,0.06)",
@@ -89,53 +84,30 @@ export default function CTAFinal() {
                 <path d="M3 7l4 4 5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="font-sans text-parchment/80 text-sm leading-relaxed">
-              Ou ter um caminho claro em{" "}
-              <span className="text-goldenrod font-semibold">2 horas</span> e
-              começar{" "}
-              <span className="text-parchment font-semibold">ainda essa semana</span>.
+            <p className="text-parchment/80 text-sm leading-relaxed">
+              Ou pode ter um caminho claro em{" "}
+              <span className="text-goldenrod font-semibold">menos de 3 horas</span> e
+              aplicar{" "}
+              <span className="text-parchment font-semibold">ainda esta semana</span>.
             </p>
           </motion.div>
         </div>
-
-        {/* Main headline */}
-        <motion.h2
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-bold text-[clamp(2rem,5vw,4rem)] text-parchment mb-4"
-          style={{ letterSpacing: "-0.04em" }}
-        >
-          Pare de usar IA{" "}
-          <span className="italic text-goldenrod font-light">no escuro.</span>
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-parchment/55 font-sans text-lg max-w-xl mx-auto mb-10 leading-relaxed"
-        >
-          2 horas agora. Resultado essa semana.
-          <br />
-          Garantia de 7 dias — sem perguntas.
-        </motion.p>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center gap-4"
         >
           <div className="pulse-ring-wrap rounded-3xl">
             <AnimatedButton href={CHECKOUT_URL} size="lg">
-              Quero aplicar IA no trabalho →
+              {"Começar agora por R$ 147,00 \u2192"}
             </AnimatedButton>
           </div>
 
-          <p className="text-parchment/30 text-sm font-sans">
-            R$ 147,00 · Garantia de 7 dias · Certificado incluso
+          <p className="text-parchment/30 text-sm">
+            Garantia de 7 dias · Acesso imediato · Certificado incluso
           </p>
         </motion.div>
 
@@ -144,7 +116,7 @@ export default function CTAFinal() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 pt-8 border-t border-white/6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-parchment/25 text-xs font-sans"
+          className="mt-20 pt-8 border-t border-white/6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-parchment/25 text-xs"
         >
           <span>© 2025 Gio Mangoni</span>
           <span>·</span>

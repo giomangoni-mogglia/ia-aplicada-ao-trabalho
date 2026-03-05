@@ -4,17 +4,16 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const forItems = [
-  "Já usa IA mas está preso no modo básico",
-  "Quer aplicar de verdade no trabalho — sem programar",
-  "Precisa de metodologia, não só de ferramentas",
-  "Quer resultado prático ainda essa semana",
-  "Trabalha em Marketing, Design, Produto, Vendas, CS, RH ou Operações",
+  "Já usa IA, mas sente que poderia fazer muito mais com ela",
+  "Ouve falar de Claude, Gemini, ChatGPT, NotebookLM e não sabe qual é a melhor para você",
+  "Sente que está ficando para trás. Toda semana tem novidade e a sensação de atraso só aumenta",
+  "Sabe que a IA pode se tornar seu superpoder, mas não sabe por onde começar",
 ];
 
 const notForItems = [
-  "Quer aprender a programar ou criar sistemas de IA",
-  "Está começando do zero absoluto com tecnologia",
-  "Busca teoria acadêmica sobre inteligência artificial",
+  "Nunca abriu nenhuma ferramenta de IA e quer começar do absoluto zero",
+  "Quer aprender a construir sistemas de IA do zero com programação",
+  "Já é usuário avançado e quer criar automações complexas ou agentes de IA",
 ];
 
 function ListItem({
@@ -51,7 +50,7 @@ function ListItem({
           </svg>
         )}
       </span>
-      <p className={`font-sans text-sm md:text-base leading-relaxed ${type === "for" ? "text-parchment" : "text-parchment/50"}`}>
+      <p className={`text-sm md:text-base leading-relaxed ${type === "for" ? "text-parchment" : "text-parchment/50"}`}>
         {text}
       </p>
     </motion.div>
@@ -76,16 +75,16 @@ export default function ForWho() {
           className="text-center mb-14"
         >
           <p
-            className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3"
+            className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3"
           >
-            Fit do produto
+            Para quem é
           </p>
           <h2
             className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-space-indigo"
             style={{ letterSpacing: "-0.04em" }}
           >
-            Este curso é feito{" "}
-            <span className="text-tomato">para quem já começou</span>
+            Esse curso é{" "}
+            <span className="text-tomato">para você que:</span>
           </h2>
         </motion.div>
 
@@ -111,7 +110,7 @@ export default function ForWho() {
                 className="font-bold text-space-indigo text-xl"
                 style={{ letterSpacing: "-0.03em" }}
               >
-                É para você se...
+                Esse curso é para você que:
               </h3>
             </div>
             <div>
@@ -142,20 +141,13 @@ export default function ForWho() {
                 className="font-bold text-space-indigo/60 text-xl"
                 style={{ letterSpacing: "-0.03em" }}
               >
-                Não é para você se...
+                {"Este curso não é para quem:"}
               </h3>
             </div>
             <div>
               {notForItems.map((item, i) => (
                 <ListItem key={i} text={item} type="notFor" index={i} />
               ))}
-            </div>
-
-            {/* Honest note */}
-            <div className="mt-6 pt-6 border-t border-space-indigo/8">
-              <p className="text-space-indigo/50 text-sm font-sans leading-relaxed font-medium">
-                Honestidade é parte do produto. Se você não se encaixa agora, esse curso não é para você — ainda.
-              </p>
             </div>
           </motion.div>
         </div>

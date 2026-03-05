@@ -7,34 +7,22 @@ import { CHECKOUT_URL } from "../constants";
 
 const features = [
   {
-    icon: "🎯",
-    label: "3 módulos práticos",
-    description: "Diagnóstico, ferramentas e implementação",
+    label: "3 módulos com aulas curtas e diretas ao ponto",
   },
   {
-    icon: "📋",
-    label: "Casos de uso por área",
-    description: "Marketing, Produto, Vendas, RH, Ops e mais",
+    label: "Casos de uso práticos passo a passo",
   },
   {
-    icon: "🧭",
-    label: "Framework de diagnóstico",
-    description: "Mapeie suas tarefas otimizáveis em 30 min",
+    label: "Método MAPA de diagnóstico de tarefas",
   },
   {
-    icon: "💬",
-    label: "Galeria de prompts",
-    description: "Prompts prontos para situações reais",
+    label: "Galeria de prompts prontos para copiar",
   },
   {
-    icon: "⚡",
+    label: "Certificado de conclusão",
+  },
+  {
     label: "Acesso imediato",
-    description: "Comece agora, aplique essa semana",
-  },
-  {
-    icon: "📜",
-    label: "Certificado incluso",
-    description: "Comprove seu desenvolvimento profissional",
   },
 ];
 
@@ -58,7 +46,7 @@ export default function Offer() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3">
             O produto
           </p>
           <h2
@@ -88,12 +76,42 @@ export default function Offer() {
             <div className="h-1 bg-gradient-to-r from-tomato via-goldenrod to-cerulean" />
 
             <div className="p-8 md:p-12">
+              {/* Features list */}
+              <div className="space-y-3 mb-10">
+                {features.map((f, i) => (
+                  <motion.div
+                    key={f.label}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.3 + i * 0.07 }}
+                    className="flex items-center gap-3 py-2"
+                  >
+                    <span className="w-5 h-5 rounded-full bg-goldenrod/15 border border-goldenrod/30 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3 text-goldenrod" fill="none" viewBox="0 0 12 12">
+                        <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <p className="text-parchment text-base font-medium">
+                      {f.label}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+
               {/* Price block */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
                 <div>
-                  <p className="text-parchment/40 text-sm font-sans mb-1">
-                    Investimento único
+                  <p className="text-parchment/40 text-sm mb-1">
+                    Oferta especial de lançamento - 1o lote
                   </p>
+                  <div className="flex items-center gap-3 mb-1">
+                    <span className="text-parchment/30 line-through text-xl font-medium">
+                      R$ 497,00
+                    </span>
+                  </div>
                   <div className="flex items-start gap-1">
                     <span className="text-parchment/60 font-bold text-2xl mt-2">
                       R$
@@ -105,9 +123,6 @@ export default function Offer() {
                       147
                     </span>
                   </div>
-                  <p className="text-parchment/40 text-xs font-sans mt-2">
-                    ou 12x de R$ 14,15 no cartão
-                  </p>
                 </div>
 
                 {/* Value comparison */}
@@ -118,43 +133,11 @@ export default function Offer() {
                     border: "1px solid rgba(212,160,23,0.2)",
                   }}
                 >
-                  <p className="text-goldenrod text-xs font-bold uppercase tracking-wide mb-1">
-                    Perspectiva de valor
-                  </p>
-                  <p className="text-parchment/70 text-sm font-sans leading-snug">
-                    Menos que uma assinatura de ferramenta de IA que você não usa direito.
+                  <p className="text-parchment/70 text-sm leading-snug">
+                    Menos que uma assinatura mensal de ferramenta de IA que você não usa direito.
                   </p>
                 </div>
               </div>
-
-              {/* Features grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
-                {features.map((f, i) => (
-                  <motion.div
-                    key={f.label}
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.4 + i * 0.07 }}
-                    className="flex items-center gap-3 py-3 px-4 rounded-xl hover:bg-white/3 transition-colors duration-200"
-                  >
-                    <span className="text-xl flex-shrink-0">{f.icon}</span>
-                    <div>
-                      <p
-                        className="font-bold text-parchment text-sm"
-                        style={{ letterSpacing: "-0.02em" }}
-                      >
-                        {f.label}
-                      </p>
-                      <p className="text-parchment/45 text-xs font-sans mt-0.5">
-                        {f.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
 
               {/* CTA */}
               <div className="flex flex-col items-center gap-4">
@@ -165,11 +148,11 @@ export default function Offer() {
                   className="pulse-ring-wrap rounded-3xl"
                 >
                   <AnimatedButton href={CHECKOUT_URL} size="lg">
-                    Quero aplicar IA no trabalho →
+                    {"Quero aplicar IA no meu trabalho hoje \u2192"}
                   </AnimatedButton>
                 </motion.div>
 
-                <div className="flex items-center gap-4 text-parchment/35 text-xs font-sans">
+                <div className="flex items-center gap-4 text-parchment/35 text-xs">
                   <span className="flex items-center gap-1.5">
                     <svg className="w-3.5 h-3.5 text-goldenrod/60" fill="none" viewBox="0 0 14 14">
                       <path d="M7 1l1.5 3.5L12 5 9.5 7.5l.6 3.5L7 9.4 3.9 11l.6-3.5L2 5l3.5-.5z" stroke="currentColor" strokeWidth="1" />
