@@ -45,7 +45,7 @@ export default function Offer() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#0f0f1f] py-20 md:py-32 overflow-hidden"
+      className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden"
     >
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[radial-gradient(ellipse,rgba(249,87,56,0.06)_0%,transparent_70%)] pointer-events-none" />
@@ -58,11 +58,11 @@ export default function Offer() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3">
             O produto
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
+            className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
             IA Aplicada ao Trabalho
@@ -91,21 +91,21 @@ export default function Offer() {
               {/* Price block */}
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
                 <div>
-                  <p className="text-parchment/40 text-sm font-body mb-1">
+                  <p className="text-parchment/40 text-sm font-sans mb-1">
                     Investimento único
                   </p>
                   <div className="flex items-start gap-1">
-                    <span className="text-parchment/60 font-heading font-bold text-2xl mt-2">
+                    <span className="text-parchment/60 font-bold text-2xl mt-2">
                       R$
                     </span>
                     <span
-                      className="font-heading font-bold text-[clamp(3.5rem,8vw,5.5rem)] text-parchment leading-none"
+                      className="font-bold text-[clamp(3.5rem,8vw,5.5rem)] text-parchment leading-none"
                       style={{ letterSpacing: "-0.04em" }}
                     >
                       147
                     </span>
                   </div>
-                  <p className="text-parchment/40 text-xs font-body mt-2">
+                  <p className="text-parchment/40 text-xs font-sans mt-2">
                     ou 12x de R$ 14,15 no cartão
                   </p>
                 </div>
@@ -118,10 +118,10 @@ export default function Offer() {
                     border: "1px solid rgba(212,160,23,0.2)",
                   }}
                 >
-                  <p className="text-goldenrod text-xs font-heading font-bold uppercase tracking-wide mb-1">
+                  <p className="text-goldenrod text-xs font-bold uppercase tracking-wide mb-1">
                     Perspectiva de valor
                   </p>
-                  <p className="text-parchment/70 text-sm font-body leading-snug">
+                  <p className="text-parchment/70 text-sm font-sans leading-snug">
                     Menos que uma assinatura de ferramenta de IA que você não usa direito.
                   </p>
                 </div>
@@ -140,12 +140,12 @@ export default function Offer() {
                     <span className="text-xl flex-shrink-0">{f.icon}</span>
                     <div>
                       <p
-                        className="font-heading font-bold text-parchment text-sm"
+                        className="font-bold text-parchment text-sm"
                         style={{ letterSpacing: "-0.02em" }}
                       >
                         {f.label}
                       </p>
-                      <p className="text-parchment/45 text-xs font-body mt-0.5">
+                      <p className="text-parchment/45 text-xs font-sans mt-0.5">
                         {f.description}
                       </p>
                     </div>
@@ -169,7 +169,7 @@ export default function Offer() {
                   </AnimatedButton>
                 </motion.div>
 
-                <div className="flex items-center gap-4 text-parchment/35 text-xs font-body">
+                <div className="flex items-center gap-4 text-parchment/35 text-xs font-sans">
                   <span className="flex items-center gap-1.5">
                     <svg className="w-3.5 h-3.5 text-goldenrod/60" fill="none" viewBox="0 0 14 14">
                       <path d="M7 1l1.5 3.5L12 5 9.5 7.5l.6 3.5L7 9.4 3.9 11l.6-3.5L2 5l3.5-.5z" stroke="currentColor" strokeWidth="1" />

@@ -69,7 +69,7 @@ export default function BeforeAfter() {
   const titleInView = useInView(titleRef, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative bg-[#1A1A2E] py-20 md:py-32 overflow-hidden">
+    <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
       {/* Decorative blob */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cerulean/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-tomato/5 rounded-full blur-3xl pointer-events-none" />
@@ -83,11 +83,11 @@ export default function BeforeAfter() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3">
             Transformação
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
+            className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
             Antes e depois do curso
@@ -108,7 +108,7 @@ export default function BeforeAfter() {
               </svg>
             </span>
             <span
-              className="font-heading font-bold text-parchment/50 text-sm uppercase tracking-wide"
+              className="font-bold text-parchment/50 text-sm uppercase tracking-wide"
               style={{ letterSpacing: "0.08em" }}
             >
               Antes
@@ -126,7 +126,7 @@ export default function BeforeAfter() {
               </svg>
             </span>
             <span
-              className="font-heading font-bold text-parchment/50 text-sm uppercase tracking-wide"
+              className="font-bold text-parchment/50 text-sm uppercase tracking-wide"
               style={{ letterSpacing: "0.08em" }}
             >
               Depois
@@ -147,7 +147,7 @@ export default function BeforeAfter() {
                         <path d="M2 2l8 8M10 2L2 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                       </svg>
                     </span>
-                    <p className="text-parchment/60 font-body text-sm md:text-base leading-relaxed">
+                    <p className="text-parchment/60 font-sans text-sm md:text-base leading-relaxed">
                       {row.before}
                     </p>
                   </div>
@@ -163,7 +163,7 @@ export default function BeforeAfter() {
                         <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <p className="text-parchment font-body text-sm md:text-base leading-relaxed font-medium">
+                    <p className="text-parchment font-sans text-sm md:text-base leading-relaxed font-medium">
                       {row.after}
                     </p>
                   </div>
@@ -181,10 +181,10 @@ export default function BeforeAfter() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="font-serif italic text-parchment/60 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="italic text-parchment/60 font-light text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             &ldquo;Você não vai virar especialista em IA em 2 horas. Mas vai saber usar
             IA para trabalhar melhor —{" "}
-            <span className="text-goldenrod not-italic font-heading font-semibold">
+            <span className="text-goldenrod not-italic font-semibold">
               e vai sentir isso ainda essa semana.
             </span>
             &rdquo;

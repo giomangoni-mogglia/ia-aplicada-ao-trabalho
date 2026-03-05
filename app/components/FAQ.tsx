@@ -53,7 +53,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
         aria-expanded={open}
       >
         <span
-          className="font-heading font-semibold text-parchment text-base md:text-lg group-hover:text-goldenrod transition-colors duration-200"
+          className="font-semibold text-parchment text-base md:text-lg group-hover:text-goldenrod transition-colors duration-200"
           style={{ letterSpacing: "-0.02em" }}
         >
           {faq.q}
@@ -85,7 +85,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
             transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <p className="pb-5 font-body text-parchment/60 text-base leading-relaxed">
+            <p className="pb-5 text-parchment/60 text-base leading-relaxed">
               {faq.a}
             </p>
           </motion.div>
@@ -102,7 +102,7 @@ export default function FAQ() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#1A1A2E] py-20 md:py-32 overflow-hidden"
+      className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden"
     >
       {/* Grid background */}
       <div
@@ -121,15 +121,15 @@ export default function FAQ() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3">
             Dúvidas frequentes
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
+            className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
             Perguntas &{" "}
-            <span className="font-serif italic text-goldenrod">respostas</span>
+            <span className="italic text-goldenrod font-light">respostas</span>
           </h2>
         </motion.div>
 

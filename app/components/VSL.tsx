@@ -14,7 +14,7 @@ export default function VSL() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#0f0f1f] py-20 md:py-32 overflow-hidden"
+      className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden"
     >
       {/* Subtle grid bg */}
       <div
@@ -33,15 +33,15 @@ export default function VSL() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-10"
         >
-          <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3">
             Antes de continuar
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.6rem,4vw,2.6rem)] text-parchment"
+            className="font-bold text-[clamp(1.6rem,4vw,2.6rem)] text-parchment"
             style={{ letterSpacing: "-0.03em" }}
           >
             Assista.{" "}
-            <span className="font-serif italic text-goldenrod">
+            <span className="italic text-goldenrod font-light">
               Em 2 minutos
             </span>{" "}
             você vai entender por que chegou até aqui.
@@ -58,11 +58,11 @@ export default function VSL() {
         >
           {!playing ? (
             <div
-              className="absolute inset-0 bg-[#1A1A2E] cursor-pointer group flex items-center justify-center"
+              className="absolute inset-0 bg-[#0A0A0A] cursor-pointer group flex items-center justify-center"
               onClick={() => setPlaying(true)}
             >
               {/* Thumbnail overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A8A]/20 to-[#1A1A2E]/80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6A8A]/20 to-[#0A0A0A]/80" />
 
               {/* Abstract thumbnail visual */}
               <div className="absolute inset-0 flex items-center justify-center opacity-20">
@@ -84,7 +84,7 @@ export default function VSL() {
                     </svg>
                   </div>
                 </div>
-                <span className="text-parchment/80 text-sm font-body">
+                <span className="text-parchment/80 text-sm">
                   Clique para assistir · ~2 minutos
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function VSL() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#1A1A2E] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#0A0A0A] pointer-events-none" />
     </section>
   );
 }

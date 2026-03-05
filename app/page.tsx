@@ -13,7 +13,7 @@ import CTAFinal from "./components/CTAFinal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-space-indigo">
+    <main className="min-h-screen bg-[#0A0A0A]">
       {/* Manu section — Announcement bar */}
       <AnnouncementBar />
 

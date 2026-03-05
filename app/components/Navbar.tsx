@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import { CHECKOUT_URL } from "../constants";
 
+const NAV_LINKS = [
+  { label: "Curso", href: "#curso" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Instrutor", href: "#instrutor" },
+  { label: "FAQ", href: "#faq" },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -16,28 +23,37 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#1A1A2E]/90 backdrop-blur-md border-b border-white/5 py-3"
+          ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-parchment/5 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-6xl mx-auto px-5 flex items-center justify-between">
         {/* Logo */}
-        <span
-          className="font-heading font-bold text-xl tracking-tighter text-parchment"
-          style={{ letterSpacing: "-0.04em" }}
-        >
+        <span className="font-bold text-xl tracking-tight text-parchment">
           mogglia
         </span>
+
+        {/* Nav links — desktop only */}
+        <div className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm text-parchment/60 hover:text-parchment transition-colors duration-200 font-light"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
 
         {/* CTA */}
         <a
           href={CHECKOUT_URL}
-          className="group relative inline-flex items-center gap-2 bg-tomato text-white font-heading font-700 text-sm px-5 py-2.5 rounded-full transition-all duration-300 hover:bg-[#e04428] hover:shadow-[0_0_20px_rgba(249,87,56,0.4)]"
-          style={{ letterSpacing: "-0.02em", fontWeight: 700 }}
+          className="inline-flex items-center gap-2 text-parchment text-sm font-medium px-5 py-2 rounded-full border border-parchment/30 hover:bg-parchment hover:text-[#0A0A0A] transition-all duration-300"
         >
-          <span>Quero aplicar IA no trabalho</span>
+          <span>Garantir vaga</span>
           <svg
-            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+            className="w-3.5 h-3.5"
             viewBox="0 0 16 16"
             fill="none"
           >

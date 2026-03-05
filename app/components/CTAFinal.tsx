@@ -43,7 +43,7 @@ export default function CTAFinal() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-8"
+          className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-8"
         >
           A escolha é sua
         </motion.p>
@@ -66,7 +66,7 @@ export default function CTAFinal() {
                 <path d="M6 1v6M6 9.5v1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <p className="font-body text-parchment/50 text-sm leading-relaxed">
+            <p className="font-sans text-parchment/50 text-sm leading-relaxed">
               Você pode continuar testando sozinho nos próximos{" "}
               <span className="text-parchment/70 font-medium">6 meses</span>{" "}
               e talvez chegar lá.
@@ -89,7 +89,7 @@ export default function CTAFinal() {
                 <path d="M3 7l4 4 5-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p className="font-body text-parchment/80 text-sm leading-relaxed">
+            <p className="font-sans text-parchment/80 text-sm leading-relaxed">
               Ou ter um caminho claro em{" "}
               <span className="text-goldenrod font-semibold">2 horas</span> e
               começar{" "}
@@ -103,18 +103,18 @@ export default function CTAFinal() {
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-heading font-bold text-[clamp(2rem,5vw,4rem)] text-parchment mb-4"
+          className="font-bold text-[clamp(2rem,5vw,4rem)] text-parchment mb-4"
           style={{ letterSpacing: "-0.04em" }}
         >
           Pare de usar IA{" "}
-          <span className="font-serif italic text-goldenrod">no escuro.</span>
+          <span className="italic text-goldenrod font-light">no escuro.</span>
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-parchment/55 font-body text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+          className="text-parchment/55 font-sans text-lg max-w-xl mx-auto mb-10 leading-relaxed"
         >
           2 horas agora. Resultado essa semana.
           <br />
@@ -134,7 +134,7 @@ export default function CTAFinal() {
             </AnimatedButton>
           </div>
 
-          <p className="text-parchment/30 text-sm font-body">
+          <p className="text-parchment/30 text-sm font-sans">
             R$ 147,00 · Garantia de 7 dias · Certificado incluso
           </p>
         </motion.div>
@@ -144,7 +144,7 @@ export default function CTAFinal() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-20 pt-8 border-t border-white/6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-parchment/25 text-xs font-body"
+          className="mt-20 pt-8 border-t border-white/6 flex flex-wrap justify-center gap-x-8 gap-y-2 text-parchment/25 text-xs font-sans"
         >
           <span>© 2025 Gio Mangoni</span>
           <span>·</span>

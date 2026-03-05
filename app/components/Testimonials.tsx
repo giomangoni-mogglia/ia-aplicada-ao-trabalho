@@ -103,7 +103,7 @@ function TestimonialCard({
 
         {/* Highlight badge */}
         <div
-          className="inline-flex items-center gap-1.5 self-start rounded-full px-3 py-1 text-xs font-heading font-bold"
+          className="inline-flex items-center gap-1.5 self-start rounded-full px-3 py-1 text-xs font-bold"
           style={{
             background: `${t.color}18`,
             border: `1px solid ${t.color}35`,
@@ -118,26 +118,26 @@ function TestimonialCard({
         </div>
 
         {/* Quote */}
-        <blockquote className="font-body text-parchment/80 text-base md:text-lg leading-relaxed flex-1">
+        <blockquote className="text-parchment/80 text-base md:text-lg leading-relaxed flex-1">
           &ldquo;{t.quote}&rdquo;
         </blockquote>
 
         {/* Author */}
         <div className="flex items-center gap-3 pt-4 border-t border-white/6">
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-white text-sm flex-shrink-0"
+            className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0"
             style={{ background: t.color }}
           >
             {t.initial}
           </div>
           <div>
             <p
-              className="font-heading font-bold text-parchment text-sm"
+              className="font-bold text-parchment text-sm"
               style={{ letterSpacing: "-0.02em" }}
             >
               {t.name}
             </p>
-            <p className="text-parchment/45 text-xs font-body">{t.role}</p>
+            <p className="text-parchment/45 text-xs">{t.role}</p>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@ function TestimonialCard({
 
 export default function Testimonials() {
   return (
-    <section className="relative bg-[#0f0f1f] py-20 md:py-32 overflow-hidden">
+    <section className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden">
       {/* Radial glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_top,rgba(45,106,138,0.08)_0%,transparent_70%)] pointer-events-none" />
 
@@ -160,11 +160,11 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="text-center mb-14"
         >
-          <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3">
+          <p className="text-cerulean text-sm font-medium uppercase tracking-widest mb-3">
             Resultados reais
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
+            className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-parchment"
             style={{ letterSpacing: "-0.04em" }}
           >
             Quem aplicou,{" "}
@@ -180,7 +180,7 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#1A1A2E] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#0A0A0A] pointer-events-none" />
     </section>
   );
 }

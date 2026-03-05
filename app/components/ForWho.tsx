@@ -51,7 +51,7 @@ function ListItem({
           </svg>
         )}
       </span>
-      <p className={`font-body text-sm md:text-base leading-relaxed ${type === "for" ? "text-parchment" : "text-parchment/50"}`}>
+      <p className={`font-sans text-sm md:text-base leading-relaxed ${type === "for" ? "text-parchment" : "text-parchment/50"}`}>
         {text}
       </p>
     </motion.div>
@@ -76,12 +76,12 @@ export default function ForWho() {
           className="text-center mb-14"
         >
           <p
-            className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-3"
+            className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-3"
           >
             Fit do produto
           </p>
           <h2
-            className="font-heading font-bold text-[clamp(1.8rem,4vw,3rem)] text-space-indigo"
+            className="font-bold text-[clamp(1.8rem,4vw,3rem)] text-space-indigo"
             style={{ letterSpacing: "-0.04em" }}
           >
             Este curso é feito{" "}
@@ -108,7 +108,7 @@ export default function ForWho() {
                 </svg>
               </div>
               <h3
-                className="font-heading font-bold text-space-indigo text-xl"
+                className="font-bold text-space-indigo text-xl"
                 style={{ letterSpacing: "-0.03em" }}
               >
                 É para você se...
@@ -139,7 +139,7 @@ export default function ForWho() {
                 </svg>
               </div>
               <h3
-                className="font-heading font-bold text-space-indigo/60 text-xl"
+                className="font-bold text-space-indigo/60 text-xl"
                 style={{ letterSpacing: "-0.03em" }}
               >
                 Não é para você se...
@@ -153,7 +153,7 @@ export default function ForWho() {
 
             {/* Honest note */}
             <div className="mt-6 pt-6 border-t border-space-indigo/8">
-              <p className="text-space-indigo/50 text-sm font-body leading-relaxed font-medium">
+              <p className="text-space-indigo/50 text-sm font-sans leading-relaxed font-medium">
                 Honestidade é parte do produto. Se você não se encaixa agora, esse curso não é para você — ainda.
               </p>
             </div>

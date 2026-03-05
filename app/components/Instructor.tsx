@@ -16,7 +16,7 @@ export default function Instructor() {
   return (
     <section
       ref={ref}
-      className="relative bg-[#1A1A2E] py-20 md:py-32 overflow-hidden"
+      className="relative bg-[#0A0A0A] py-20 md:py-32 overflow-hidden"
     >
       {/* Decorative blob */}
       <div className="absolute -top-20 -right-20 w-80 h-80 bg-cerulean/8 rounded-full blur-3xl pointer-events-none" />
@@ -45,13 +45,13 @@ export default function Instructor() {
                   <div className="h-2 w-32 bg-white/20 rounded" />
                   <div className="h-1.5 w-20 bg-white/10 rounded mx-auto" />
                 </div>
-                <p className="text-parchment/40 text-xs font-body">
+                <p className="text-parchment/40 text-xs font-sans">
                   Substitua com sua foto
                 </p>
               </div>
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A2E] via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
             </div>
 
             {/* Floating credential card */}
@@ -63,11 +63,11 @@ export default function Instructor() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-goldenrod animate-pulse" />
-                <span className="text-goldenrod text-xs font-heading font-bold uppercase tracking-wide">
+                <span className="text-goldenrod text-xs font-bold uppercase tracking-wide">
                   Top Voice
                 </span>
               </div>
-              <p className="text-parchment text-xs font-body leading-tight">
+              <p className="text-parchment text-xs font-sans leading-tight">
                 LinkedIn em IA · 2024
               </p>
             </motion.div>
@@ -79,18 +79,18 @@ export default function Instructor() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-cerulean text-sm font-body font-medium uppercase tracking-widest mb-4">
+            <p className="text-cerulean text-sm font-sans font-medium uppercase tracking-widest mb-4">
               Quem ensina
             </p>
 
             <h2
-              className="font-heading font-bold text-[clamp(2rem,4vw,3.2rem)] text-parchment mb-6"
+              className="font-bold text-[clamp(2rem,4vw,3.2rem)] text-parchment mb-6"
               style={{ letterSpacing: "-0.04em" }}
             >
               Gio Mangoni
             </h2>
 
-            <p className="font-body text-parchment/70 text-base md:text-lg leading-relaxed mb-8">
+            <p className="font-sans text-parchment/70 text-base md:text-lg leading-relaxed mb-8">
               Educadora de IA aplicada ao trabalho. 250+ profissionais e
               empresas atendidos. Top Voice LinkedIn. Palestras na{" "}
               <span className="text-parchment font-medium">Red Bull</span>,{" "}
@@ -106,10 +106,10 @@ export default function Instructor() {
               className="relative pl-6 mb-10"
             >
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-tomato via-goldenrod to-transparent" />
-              <p className="font-serif italic text-parchment text-xl md:text-2xl leading-snug">
+              <p className="italic text-parchment text-xl md:text-2xl leading-snug font-light">
                 &ldquo;Eu não ensino IA como hype.
                 <br />
-                <span className="text-goldenrod not-italic font-heading font-bold">
+                <span className="text-goldenrod not-italic font-bold">
                   Ensino como ferramenta de trabalho.
                 </span>
                 &rdquo;
@@ -127,12 +127,12 @@ export default function Instructor() {
                   className="glass-card rounded-xl p-4 text-center"
                 >
                   <p
-                    className="font-heading font-bold text-parchment text-2xl"
+                    className="font-bold text-parchment text-2xl"
                     style={{ letterSpacing: "-0.04em" }}
                   >
                     {s.value}
                   </p>
-                  <p className="text-parchment/45 text-xs font-body mt-1 leading-tight">
+                  <p className="text-parchment/45 text-xs font-sans mt-1 leading-tight">
                     {s.label}
                   </p>
                 </motion.div>

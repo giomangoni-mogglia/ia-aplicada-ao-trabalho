@@ -9,16 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "space-indigo": "#1A1A2E",
+        "space-indigo": "#0A0A0A",
         parchment: "#F5F2EC",
         cerulean: "#2D6A8A",
         goldenrod: "#D4A017",
         tomato: "#F95738",
       },
       fontFamily: {
-        heading: ["Space Grotesk", "Helvetica Neue", "Arial", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: [
+          "Helvetica Neue",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
       letterSpacing: {
         tighter: "-0.05em",

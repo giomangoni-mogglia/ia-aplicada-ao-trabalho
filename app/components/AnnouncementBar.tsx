@@ -10,15 +10,11 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="relative z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-center"
-      style={{
-        background: "linear-gradient(90deg, #1A1A2E, #2D6A8A22, #1A1A2E)",
-        borderBottom: "1px solid rgba(212,160,23,0.2)",
-      }}
+      className="relative z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-center bg-[#0A0A0A] border-b border-parchment/10"
     >
       <span className="w-1.5 h-1.5 rounded-full bg-goldenrod animate-pulse flex-shrink-0" />
-      <p className="text-parchment/80 text-xs md:text-sm font-body">
-        <span className="text-goldenrod font-semibold font-heading" style={{ letterSpacing: "-0.02em" }}>
+      <p className="text-parchment/70 text-xs md:text-sm font-light">
+        <span className="text-parchment font-medium">
           IA Aplicada ao Trabalho
         </span>{" "}
         · Acesso imediato · Garantia de 7 dias ·{" "}
@@ -26,7 +22,7 @@ export default function AnnouncementBar() {
           href={CHECKOUT_URL}
           className="underline-draw text-parchment font-medium hover:text-goldenrod transition-colors duration-200"
         >
-          Garantir minha vaga →
+          Garantir minha vaga
         </a>
       </p>
       <button
