@@ -14,6 +14,13 @@ const config: Config = {
         cerulean: "#2D6A8A",
         goldenrod: "#D4A017",
         tomato: "#F95738",
+        // Mogglia Proposal System
+        "m-bg": "#F7F3EA",
+        "m-text": "#222222",
+        "m-coral": "#F97477",
+        "m-teal": "#87C0B2",
+        "m-yellow": "#FCFFD5",
+        "m-border": "#E8E4DB",
       },
       fontFamily: {
         heading: ["Space Grotesk", "Helvetica Neue", "Arial", "sans-serif"],
